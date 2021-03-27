@@ -17,7 +17,7 @@ const App = () => {
   const alanKey =
     'b7c5003f6518b3a80b4d1ca9f98631012e956eca572e1d8b807a3e2338fdd0dc/stage';
   useEffect(() => {
-    alanBtn({
+    let alanBtnInstance = alanBtn({
       key: alanKey,
       onCommand: ({ command, articles, number }) => {
         if (command === 'newsHeadlines') {
@@ -43,6 +43,14 @@ const App = () => {
           } else {
             alanBtn().playText('Please try that again!');
           }
+        }
+      },
+      onConnectionStatus: async function (status) {
+        if (status === 'authorized') {
+          await alanBtnInstance.activate();
+          alanBtnInstance.playText(
+            'Welcome to the Alan AI News Reader App by Rehan Khalil'
+          );
         }
       },
     });
