@@ -82,7 +82,7 @@ const NewsCards = ({ articles, activeArticle }) => {
       >
         {articles.map((article, i) => (
           <Grid item xs={12} sm={6} md={4} lg={3} style={{ display: 'flex' }}>
-            <NewsCard activeArticle={activeArticle} article={article} i={i} />;
+            <NewsCard activeArticle={activeArticle} article={article} i={i} />
           </Grid>
         ))}
       </Grid>
