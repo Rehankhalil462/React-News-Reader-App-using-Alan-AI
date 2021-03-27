@@ -38,6 +38,7 @@ export default makeStyles((theme) => ({
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column-reverse',
       textAlign: 'center',
+      marginBottom: 12,
       width: '100%',
       height: 'initial',
       '&:nth-of-type(1)': {
